@@ -1,3 +1,3 @@
 library('nullcode', [files(
 'null_code.c',
-)], install: true)
+)], soversion: 1, install: true, c_args: c_args)

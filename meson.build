@@ -84,7 +84,7 @@ dl_dep = c_compiler.find_library('dl')
 threads_dep = dependency('threads')
 ec_deps = [zlib_dep, m_dep, dl_dep, threads_dep]
 
-ec_lib = library('erasurecode', ec_files + [inc], include_directories: ec_inc, dependencies: ec_deps, c_args: c_args, install: true)
+ec_lib = library('erasurecode', ec_files + [inc], include_directories: ec_inc, dependencies: ec_deps, c_args: c_args, install: true, soversion: 1)
 
 ec_dep = declare_dependency(link_with : ec_lib, dependencies: ec_deps,
   include_directories : ec_inc)
