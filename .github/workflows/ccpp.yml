@@ -9,13 +9,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: autogen
-      run: ./autogen.sh
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make test
-      run: make test
+    - name: install meson
+      run: |
+          sudo apt-get install -y python3-pip ninja-build python3-setuptools
+          sudo python3 -m pip install meson
+    - name: compile & test
+      run: |
+          meson build
+          cd build
+          ninja
+          sudo ninja install
+          sudo ldconfig
+          ninja test
