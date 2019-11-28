@@ -1,3 +1,3 @@
-ec_files += [files(
+library('nullcode', [files(
 'null_code.c',
-)]
+)], install: true)

@@ -84,7 +84,7 @@ ec_deps = [zlib_dep, m_dep, dl_dep, threads_dep]
 c_args = ['-D_GNU_SOURCE=1', '-pedantic']
 c_args += optim_flags
 
-ec_lib = library('erasurecode', ec_files + [inc], include_directories: ec_inc, dependencies: ec_deps, c_args: c_args)
+ec_lib = library('erasurecode', ec_files + [inc], include_directories: ec_inc, dependencies: ec_deps, c_args: c_args, install: true)
 
 ec_dep = declare_dependency(link_with : ec_lib, dependencies: ec_deps,
   include_directories : ec_inc)
