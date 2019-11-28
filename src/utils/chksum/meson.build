@@ -1,0 +1,1 @@
+ec_files += [files('alg_sig.c', 'crc32.c', 'md5.c')] 
