@@ -78,8 +78,8 @@ subdir('src')
 zlib_dep = c_compiler.find_library('z')
 m_dep = c_compiler.find_library('m')
 dl_dep = c_compiler.find_library('dl')
-
-ec_deps = [zlib_dep, m_dep, dl_dep]
+threads_dep = dependency('threads')
+ec_deps = [zlib_dep, m_dep, dl_dep, threads_dep]
 
 c_args = ['-D_GNU_SOURCE=1', '-pedantic']
 c_args += optim_flags
