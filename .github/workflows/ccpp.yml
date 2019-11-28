@@ -18,4 +18,6 @@ jobs:
           meson build
           cd build
           ninja
+          sudo ninja install
+          sudo ldconfig
           ninja test
