@@ -1,4 +1,4 @@
-project('erasurecode', 'c', default_options : ['buildtype=debugoptimized', 'c_std=c17', 'optimization=2', 'werror=true'])
+project('erasurecode', 'c', default_options : ['buildtype=debugoptimized', 'c_std=c11', 'optimization=2', 'werror=true'])
 
 ec_inc = include_directories('include/erasurecode', 'include/isa_l', 'include/rs_vand', 'include/xor_codes')
 # ec_files = [files('get_flags_from_cpuid.c')]
